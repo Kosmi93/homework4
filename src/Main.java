@@ -7,79 +7,52 @@ public class Main {
         task3();
         task4();
     }
+    // Объявить метод «сгенерироватьМассив»
+    public static int[] generateRandomArray() {
+        java.util.Random random = new java.util.Random();
+        int[] arr = new int[30];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100_000) + 100_000;
+        }
+        return arr;
+    }
+
     public static void task1(){
-        int[] arr1 = new int[] {1,2,3};
-        double[] arr2 = new double[] {1.57, 7.654, 9.986};
-        int[] arr3 = new int[10];
-        for (int i = 0; i < arr3.length; i++) {
-            arr3[i] = i;
+        int[ ] arr = generateRandomArray();
+        int summ = 0;
+        for (int i = 0; i < arr.length; i++) {
+            summ +=arr[i];
         }
+        System.out.printf("Сумма трат за месяц составила %d рублей\n",summ);
     }
+
     public static void task2(){
-        int[] arr1 = new int[] {1,2,3};
-        double[] arr2 = new double[] {1.57, 7.654, 9.986};
-        int[] arr3 = new int[10];
-        for (int i = 0; i < arr3.length; i++) {
-            arr3[i] = i;
+        int[ ] arr = generateRandomArray();
+        int min = 0;
+        int max = 0;
+        for (int i = 0; i < arr.length; i++) {
+            max = Math.max(max, arr[i]);
+            min = Math.min(min,arr[i]);
         }
-        for (int i = 0; i < arr1.length; i++) {
-            System.out.print(arr1[i]);
-            if(i!=arr1.length-1)
-                System.out.print(",");
-        }
-        System.out.println();
-        for (int i = 0; i < arr2.length; i++) {
-            System.out.print(arr2[i]);
-            if(i!=arr2.length-1)
-                System.out.print(",");
-        }
-        System.out.println();
-        for (int i = 0; i < arr3.length; i++) {
-            System.out.print(arr3[i]);
-            if(i!=arr3.length-1)
-                System.out.print(",");
-        }
-
+        System.out.printf("Минимальная сумма трат за день составила %d рублей. Максимальная сумма трат за день составила %d рублей\n",min,max);
     }
-    public static void task3(){
-        int[] arr1 = new int[] {1,2,3};
-        double[] arr2 = new double[] {1.57, 7.654, 9.986};
-        int[] arr3 = new int[10];
-        for (int i = 0; i < arr3.length; i++) {
-            arr3[i] = i;
-        }
-        System.out.println();
-        for (int i = arr1.length-1; i >=0; i--) {
-            System.out.print(arr1[i]);
-            if(i!=0)
-                System.out.print(",");
-        }
-        System.out.println();
-        for (int i = arr2.length-1; i >=0; i--) {
-            System.out.print(arr2[i]);
-            if(i!=0)
-                System.out.print(",");
-        }
-        System.out.println();
-        for (int i = arr3.length-1; i >=0; i--) {
-            System.out.print(arr3[i]);
-            if(i!=0)
-                System.out.print(",");
-        }
 
+    public static void task3(){
+        int[ ] arr = generateRandomArray();
+        int summ = 0;
+        for (int i = 0; i < arr.length; i++) {
+            summ +=arr[i];
+        }
+        double average = (double) summ / arr.length;
+        System.out.printf("Средняя сумма трат за месяц составила %.2f рублей\n",average);
     }
 
     public static void task4(){
-        int[] arr1 = new int[] {1,2,3};
-        for (int i = 0; i < arr1.length; i++) {
-            if(i%2==0)
-                arr1[i]++;
+        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = reverseFullName.length-1; i >=0 ; i--) {
+            System.out.print(reverseFullName[i]);
         }
-        System.out.println();
-        for (int i = 0; i < arr1.length; i++) {
-            System.out.print(arr1[i]);
-            if(i!=arr1.length-1)
-                System.out.print(",");
-        }
+
     }
+
 }
